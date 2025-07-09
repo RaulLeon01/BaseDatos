@@ -11,7 +11,7 @@ public class Main {
 
         // Se crea la URL del nombre y la dirección de la base de datos
         // Nombre: UJG9Y951JKFMPG52
-        String jdbcUrl = "jdbc:oracle:thin:@UJG9Y951JKFMPG52" + "G:\\1-UTEZ\\3-.Cuatrimestre\\POO\\Trabajos\\Semana11\\BaseDatos\\BaseDatos\\src\\Wallet";
+        String jdbcUrl = "jdbc:oracle:thin:@ICL8AQFAU8E0BZLC";
 
         // Creación para acceder a los datos
         String username = "ADMIN";
@@ -28,7 +28,7 @@ public class Main {
             System.out.println("Conexión exitosa");
             Statement stmt = conexion.createStatement();
 
-            ResultSet rs = stmt.executeQuery("*select *from AUTOR");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM AUTOR");
 
             // Recorre la tabla
             while (rs.next()){
