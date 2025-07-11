@@ -6,16 +6,16 @@ import java.sql.*;
 public class Main {
     public static void main(String[] args) {
         // Variables
-        String wallet = "G:\\1-UTEZ\\3-.Cuatrimestre\\POO\\Trabajos\\Semana11\\BaseDatos\\BaseDatos\\src\\Wallet";
-        System.setProperty("oracle.net.tns_admin", wallet);
+        String wallet = "G:\\1-UTEZ\\3-.Cuatrimestre\\POO\\Trabajos\\1-Cartera\\Biblioteca";
+        System.setProperty("oracle.net.icl8aqfau8e0bzlc_high", wallet);
 
         // Se crea la URL del nombre y la dirección de la base de datos
-        // Nombre: UJG9Y951JKFMPG52
-        String jdbcUrl = "jdbc:oracle:thin:@ICL8AQFAU8E0BZLC";
+        // Nombre: icl8aqfau8e0bzlc_high
+        String jdbcUrl = "jdbc:oracle:thin:@icl8aqfau8e0bzlc_high";
 
         // Creación para acceder a los datos
         String username = "ADMIN";
-        String password = "Spartan$3108jefe&";
+        String password = "Biblioteca01";
 
         // Capturar los errores que se vayan a tener
         try {
@@ -28,7 +28,7 @@ public class Main {
             System.out.println("Conexión exitosa");
             Statement stmt = conexion.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT * FROM AUTOR");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM AUTORES");
 
             // Recorre la tabla
             while (rs.next()){
