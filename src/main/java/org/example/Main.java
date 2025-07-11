@@ -6,8 +6,8 @@ import java.sql.*;
 public class Main {
     public static void main(String[] args) {
         // Variables
-        String wallet = "G:\\1-UTEZ\\3-.Cuatrimestre\\POO\\Trabajos\\1-Cartera\\Biblioteca";
-        System.setProperty("oracle.net.icl8aqfau8e0bzlc_high", wallet);
+        String wallet = "G:\\1-UTEZ\\3-.Cuatrimestre\\POO\\Trabajos\\Semana11\\BaseDatos\\BaseDatos\\src\\Wallet";
+        System.setProperty("oracle.net.tns_admin", wallet);
 
         // Se crea la URL del nombre y la dirección de la base de datos
         // Nombre: icl8aqfau8e0bzlc_high
@@ -20,7 +20,7 @@ public class Main {
         // Capturar los errores que se vayan a tener
         try {
             // Obliga a cargar el driver de la base de datos
-            Class.forName("oracle.jdbc.OracleDiver");
+            Class.forName("oracle.jdbc.OracleDriver");
 
             // Hace la conexión y pasa los datos de la base de datos para poder trabajar
             //Verifica si se hizo la conexión correctamente
@@ -28,12 +28,15 @@ public class Main {
             System.out.println("Conexión exitosa");
             Statement stmt = conexion.createStatement();
 
+            // Indica que va a seleccionar la tabla AUTORES para poder imprimir datos
             ResultSet rs = stmt.executeQuery("SELECT * FROM AUTORES");
 
             // Recorre la tabla
             while (rs.next()){
                 // Imprime una por una en campo, en este caso, la columna 1
-                System.out.println(rs.getString(1));
+                System.out.printf(rs.getString(1));
+                System.out.printf(" - ");
+                System.out.println(rs.getString(2));
             }
             rs.close();
             stmt.close();
