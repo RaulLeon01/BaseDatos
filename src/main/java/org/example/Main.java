@@ -13,7 +13,7 @@ public class Main {
         // Nombre: icl8aqfau8e0bzlc_high
         String jdbcUrl = "jdbc:oracle:thin:@icl8aqfau8e0bzlc_high";
 
-        // Creación para acceder a los datos
+        // Creación de inicio de sesión para acceder a los datos de la base
         String username = "ADMIN";
         String password = "Biblioteca01";
 
@@ -28,12 +28,12 @@ public class Main {
             System.out.println("Conexión exitosa");
             Statement stmt = conexion.createStatement();
 
-            // Indica que va a seleccionar la tabla AUTORES para poder imprimir datos
+            // Ejecuta un Query que va a seleccionar la tabla AUTORES para poder imprimir datos
             ResultSet rs = stmt.executeQuery("SELECT * FROM AUTORES");
 
             // Recorre la tabla
             while (rs.next()){
-                // Imprime una por una en campo, en este caso, la columna 1
+                // Imprime una por una en campo, ejemplo: 1, 2, 3...
                 System.out.printf(rs.getString(1));
                 System.out.printf(" - ");
                 System.out.println(rs.getString(2));
